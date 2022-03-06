@@ -1,0 +1,1 @@
+#A basic example of how to use redis as cache
