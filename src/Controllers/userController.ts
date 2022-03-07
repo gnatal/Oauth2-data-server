@@ -1,7 +1,6 @@
 import { getRepository } from "typeorm";
 import { User } from "../entities/Users";
 import axios from 'axios'
-import { createClient } from 'redis';
 
 const initRedis = async () => {
     const client = createClient();
