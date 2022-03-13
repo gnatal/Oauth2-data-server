@@ -14,7 +14,7 @@ export class MovieComment {
   @Column()
   content: string
 
-  @ManyToOne(() => Movie)
+  @ManyToOne(() => Movie, movie => movie.movieComments)
   movie: Movie;
 
   @ManyToOne(() => User)

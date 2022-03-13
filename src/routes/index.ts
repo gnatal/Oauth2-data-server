@@ -6,10 +6,11 @@ const routes = Router()
 
 routes.post('/movie', movieController.create);
 routes.get('/movie', movieController.index);
-
+routes.post('/movieComment', movieController.comment);
 
 routes.post('/book', bookController.create);
-// routes.get('/book', movieController.index);
+routes.get('/book', bookController.index);
+routes.post('/bookComment', bookController.comment);
 
 routes.get('/healt', (req, res) => {
   console.log('app is working')

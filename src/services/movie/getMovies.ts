@@ -3,6 +3,6 @@ import { Movie } from "../../entities/Movie";
 
 export const getMovies = async () => {
     const movieRepository = getRepository(Movie);
-    const movies = await movieRepository.find();
+    const movies = await movieRepository.find({relations: ["movieComments"]});
     return movies;
 }

@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm'
 
+import { BookComent } from './BookComment';
 @Entity()
 export class Book {
   @PrimaryGeneratedColumn()
@@ -16,5 +17,8 @@ export class Book {
 
   @Column()
   rate: Number;
+
+  @OneToMany(() => BookComent, bookComment => bookComment.book)
+  bookComments: BookComment[];
 
 }

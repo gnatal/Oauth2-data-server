@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn } from 'typeorm'
+import { Entity, Column, PrimaryGeneratedColumn, OneToOne, JoinColumn, OneToMany } from 'typeorm'
+import { MovieComment } from './MovieComment'
 
 @Entity()
 export class Movie {
@@ -13,5 +14,8 @@ export class Movie {
 
   @Column()
   rate: Number;
+
+  @OneToMany(() => MovieComment, movieComment => movieComment.movie)
+  movieComments: MovieComment[];
 
 }
