@@ -10,7 +10,7 @@ routes.post('/movieComment', movieController.comment);
 
 routes.post('/book', bookController.create);
 routes.get('/book', bookController.index);
-routes.post('/bookComment', bookController.comment);
+routes.post('/book_comment', bookController.comment);
 
 routes.get('/healt', (req, res) => {
   console.log('app is working')
